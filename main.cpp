@@ -129,13 +129,13 @@ private:
     createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
     createInfo.ppEnabledExtensionNames = extensions.data();
 
-    if (enableValidationLayers) {
-      createInfo.enabledLayerCount =
-          static_cast<uint32_t>(validationLayers.size());
-      createInfo.ppEnabledLayerNames = validationLayers.data();
-    } else {
-      createInfo.enabledLayerCount = 0;
-    }
+    /*if (enableValidationLayers) {*/
+    /*  createInfo.enabledLayerCount =*/
+    /*      static_cast<uint32_t>(validationLayers.size());*/
+    /*  createInfo.ppEnabledLayerNames = validationLayers.data();*/
+    /*} else {*/
+    /*  createInfo.enabledLayerCount = 0;*/
+    /*}*/
 
     /*retrieve a list of supported extensions before creating an instance i.e.
      * checking for extension support*/
@@ -153,11 +153,11 @@ private:
     /*}*/
     /*end of supported extensions list*/
 
-    VkResult result = vkCreateInstance(&createInfo, nullptr, &instance);
-
-    if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
-      throw std::runtime_error("failed to create instance!");
-    }
+    /*VkResult result = vkCreateInstance(&createInfo, nullptr, &instance);*/
+    /**/
+    /*if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {*/
+    /*  throw std::runtime_error("failed to create instance!");*/
+    /*}*/
 
     /*if (extensionCheck(glfwExtensions, glfwExtensionCount,
      * supportedExtensions)) {*/
@@ -180,7 +180,6 @@ private:
     }
     
     if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
-        std::cout << "THIS IS ALSO RUNNING" << std::endl;
       throw std::runtime_error("failed to create instance!");
     }
   }
